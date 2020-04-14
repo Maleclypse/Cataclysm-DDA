@@ -79,10 +79,8 @@
   {
     "type": "mutation",
     "id": "ELEPHANTINE_SMELL",
-    "name": "Strong Scent",
-    "points": -1,
+    "name": "Elephantine Scent",
     "description": "Your scent is particularly strong.  It's vaguely offensive to humans, and animals that track your scent will do so more easily.",
-    "starting_trait": true,
     "changes_to": [ "SMELLY2" ],
     "types": [ "SCENT" ],
     "scent_intensity": 800,
@@ -441,8 +439,7 @@
   {
     "type": "mutation",
     "id": "FLUSH",
-    "name": "High Thirst",
-    "points": -2,
+    "name": "Waste Flush",
     "description": "Your body needs more water than usual to flush the denser waste products.",
     "starting_trait": true,
     "changes_to": [ "H20NEEDS" ],

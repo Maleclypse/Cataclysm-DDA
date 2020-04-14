@@ -933,7 +933,6 @@
       { "trait": "UPLIFTED" },
       { "trait": "ELEPHANTINE_SMELL", "prob": 50 },
       { "trait": "SPECAILIZED_DIET", "prob": 50 },
-      { "trait": "ELEPHANTINE_SMELL", "prob": 50 },
       { "trait": "CRUSHINGFEET", "prob": 50 },
       { "trait": "HERBIVORE", "prob": 50 },
       { "trait": "FACEBUMPS", "prob": 50 }
