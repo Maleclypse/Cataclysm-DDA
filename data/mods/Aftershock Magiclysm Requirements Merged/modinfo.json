@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "afs_magiclysm_requirements",
+    "name": "Aftershock Magiclysm requirements fix",
+    "authors": [ "Maleclypse" ],
+    "maintainers": [ "Maleclypse" ],
+    "description": "Fixes the silently failing requirements where both mods modify raw meat.  Load this mod last.",
+    "category": "content",
+    "dependencies": [ "dda", "aftershock", "magiclysm" ]
+  }
+]
