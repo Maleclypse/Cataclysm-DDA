@@ -2,7 +2,7 @@
   {
     "type": "mapgen",
     "method": "json",
-    "nested_mapgen_id": "arcology_2x2_gate",
+    "nested_mapgen_id": "arcology_2x2_gate_nw",
     "//": "Goes to 9x9 arcology stores",
     "object": {
       "mapgensize": [ 2, 2 ],
@@ -16,24 +16,78 @@
   {
     "type": "mapgen",
     "method": "json",
+    "nested_mapgen_id": "arcology_2x2_gate_sw",
+    "//": "Goes to 9x9 arcology stores",
+    "object": {
+      "mapgensize": [ 2, 2 ],
+      "rows": [
+        "/ ",
+        "//"
+      ],
+      "terrain": { "/": [ "t_retractable_gate_l", "t_retractable_gate_l", "t_retractable_gate_l", "t_retractable_gate_c" ] }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "arcology_2x2_gate_se",
+    "//": "Goes to 9x9 arcology stores",
+    "object": {
+      "mapgensize": [ 2, 2 ],
+      "rows": [
+        " /",
+        "//"
+      ],
+      "terrain": { "/": [ "t_retractable_gate_l", "t_retractable_gate_l", "t_retractable_gate_l", "t_retractable_gate_c" ] }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "arcology_2x2_gate_ne",
+    "//": "Goes to 9x9 arcology stores",
+    "object": {
+      "mapgensize": [ 2, 2 ],
+      "rows": [
+        "//",
+        " /"
+      ],
+      "terrain": { "/": [ "t_retractable_gate_l", "t_retractable_gate_l", "t_retractable_gate_l", "t_retractable_gate_c" ] }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
     "//": "designed for spaces 9x9.  Add walls around it and entrances.",
     "nested_mapgen_id": "arcology_9x9_candy_shop",
     "object": {
       "mapgensize": [ 9, 9 ],
       "rotation": [ 0, 3 ],
       "rows": [
-        "1 |||||||",
+        "1 |||||4 ",
         "         ",
-        "| L L L w",
-        "| L L L w",
-        "| L L L w",
-        "|        ",
-        "|MM?MM  Y",
-        "| A      ",
-        "| VVV    "
+        "| L L  w|",
+        "| L L  w|",
+        "|       |",
+        "|MM?MM  |",
+        "| A     |",
+        "2 VVV  3 ",
+        "  |||||  "
       ],
-      "terrain": { " ": "t_floor", "|": "t_wall_p", "1": "t_floor" },
-      "nested": { "1": { "chunks": [ "arcology_2x2_gate" ] } },
+      "terrain": {
+        " ": "t_floor",
+        "|": "t_wall_p",
+        "1": "t_linoleum_white",
+        "2": "t_linoleum_white",
+        "3": "t_linoleum_white",
+        "4": "t_linoleum_white"
+      },
+      "nested": {
+        "1": { "chunks": [ "arcology_2x2_gate_nw" ] },
+        "2": { "chunks": [ "arcology_2x2_gate_sw" ] },
+        "3": { "chunks": [ "arcology_2x2_gate_se" ] },
+        "4": { "chunks": [ "arcology_2x2_gate_ne" ] }
+      },
       "furniture": {
         "?": "f_console_broken",
         "L": "f_table",
@@ -71,24 +125,32 @@
       "mapgensize": [ 9, 9 ],
       "rotation": [ 0, 3 ],
       "rows": [
-        "1 |||||||",
+        "1 |||||4 ",
         "  ...... ",
-        "|.L.L.L.w",
-        "|.L.L.L.w",
-        "|.L.L.L.w",
-        "|....... ",
-        "|MM?MM  Y",
-        "| A      ",
-        "| VVV    "
+        "|.L.L..w|",
+        "|.L.L..w|",
+        "|...... |",
+        "|MM?M  Y|",
+        "| A     |",
+        "2 VVV  3 ",
+        "  |||||  "
       ],
-      "nested": { "1": { "chunks": [ "arcology_2x2_gate" ] } },
+      "nested": {
+        "1": { "chunks": [ "arcology_2x2_gate_nw" ] },
+        "2": { "chunks": [ "arcology_2x2_gate_sw" ] },
+        "3": { "chunks": [ "arcology_2x2_gate_se" ] },
+        "4": { "chunks": [ "arcology_2x2_gate_ne" ] }
+      },
       "terrain": {
         " ": "t_floor",
+        "1": "t_linoleum_white",
+        "2": "t_linoleum_white",
+        "3": "t_linoleum_white",
+        "4": "t_linoleum_white",
         "L": "t_carpet_yellow",
         ".": "t_carpet_yellow",
         "?": "t_carpet_yellow",
-        "|": "t_wall_p",
-        "1": "t_floor"
+        "|": "t_wall_p"
       },
       "furniture": {
         "?": "f_console_broken",
@@ -121,18 +183,22 @@
       "mapgensize": [ 9, 9 ],
       "rotation": [ 0, 3 ],
       "rows": [
-        "|HL   LHL",
-        "|        ",
-        "| L L L w",
-        "| L L L w",
-        "| L L L w",
-        "|        ",
-        "|MM?MM  Y",
-        "| A      ",
-        "| VVV    "
+        "1 |||||4 ",
+        "  HL  L  ",
+        "| L L  w|",
+        "| L L  w|",
+        "|       |",
+        "|MM?M  Y|",
+        "| A     |",
+        "2 VVV  3 ",
+        "  |||||  "
       ],
       "terrain": {
         " ": "t_linoleum_white",
+        "1": "t_linoleum_white",
+        "2": "t_linoleum_white",
+        "3": "t_linoleum_white",
+        "4": "t_linoleum_white",
         "L": "t_linoleum_white",
         "H": "t_linoleum_white",
         "V": "t_linoleum_white",
@@ -162,6 +228,12 @@
         "L": [ { "item": "arcology_vitamin_shop", "chance": 30, "repeat": [ 0, 4 ] } ],
         "M": [ { "item": "office", "chance": 30, "repeat": [ 0, 4 ] } ],
         "V": [ { "item": "arcology_vitamin_shop", "chance": 30, "repeat": [ 0, 4 ] } ]
+      },
+      "nested": {
+        "1": { "chunks": [ "arcology_2x2_gate_nw" ] },
+        "2": { "chunks": [ "arcology_2x2_gate_sw" ] },
+        "3": { "chunks": [ "arcology_2x2_gate_se" ] },
+        "4": { "chunks": [ "arcology_2x2_gate_ne" ] }
       }
     }
   },
@@ -169,23 +241,27 @@
     "type": "mapgen",
     "method": "json",
     "//": "designed for 9x9 cellphone shop.",
-    "nested_mapgen_id": "city_block_9x9_cellphone_shop_front",
+    "nested_mapgen_id": "arcology_9x9_cellphone_shop_front",
     "object": {
       "mapgensize": [ 9, 9 ],
       "rotation": [ 0, 3 ],
       "rows": [
-        "GGy   yGG",
-        " ....... ",
-        "V.LL.HH.V",
-        "V.LL.HH.V",
-        "V.LL.HH.V",
-        " ....... ",
-        "M?MM?M  Y",
-        "  A A    ",
-        "y MMMM  y"
+        "1 |||||4 ",
+        "  .....  ",
+        "|V.L.H.V|",
+        "|V.L.H.V|",
+        "|...... |",
+        "|?M?M  Y|",
+        "| A A   |",
+        "2 MMMM 3 ",
+        "  |||||  "
       ],
       "terrain": {
         " ": "t_linoleum_white",
+        "1": "t_linoleum_white",
+        "2": "t_linoleum_white",
+        "3": "t_linoleum_white",
+        "4": "t_linoleum_white",
         "G": "t_linoleum_white",
         "V": "t_linoleum_white",
         "M": "t_linoleum_white",
@@ -195,7 +271,8 @@
         "H": "t_carpet_green",
         "L": "t_carpet_green",
         ".": "t_carpet_green",
-        "?": "t_carpet_green"
+        "?": "t_carpet_green",
+        "|": "t_wall_p"
       },
       "furniture": {
         "?": "f_console_broken",
@@ -215,6 +292,12 @@
         "L": [ { "item": "cell_shop", "chance": 30, "repeat": [ 0, 4 ] } ],
         "M": [ { "item": "cell_shop", "chance": 30, "repeat": [ 0, 1 ] } ],
         "V": [ { "item": "cell_shop", "chance": 30, "repeat": [ 0, 4 ] } ]
+      },
+      "nested": {
+        "1": { "chunks": [ "arcology_2x2_gate_nw" ] },
+        "2": { "chunks": [ "arcology_2x2_gate_sw" ] },
+        "3": { "chunks": [ "arcology_2x2_gate_se" ] },
+        "4": { "chunks": [ "arcology_2x2_gate_ne" ] }
       }
     }
   },
@@ -222,22 +305,33 @@
     "type": "mapgen",
     "method": "json",
     "//": "designed for 9x9 music shop.",
-    "nested_mapgen_id": "city_block_9x9_music_shop_front",
+    "nested_mapgen_id": "arcology_9x9_music_shop_front",
     "object": {
       "mapgensize": [ 9, 9 ],
       "rotation": [ 0, 3 ],
       "rows": [
-        "HHHy yHHH",
-        " ....... ",
+        "1 Hy yH4 ",
+        "  .....  ",
         "V.LL.GG.V",
         "V.LL.GG.V",
         "V.LL.GG.V",
         " .......V",
         "MMMM?M  V",
-        "    A    ",
-        "y MMMM  Y"
+        "2   A  3 ",
+        "  MMMM   "
       ],
-      "terrain": { " ": "t_floor", "G": "t_carpet_red", "L": "t_carpet_red", ".": "t_carpet_red", "?": "t_carpet_red" },
+      "terrain": {
+        " ": "t_floor",
+        "G": "t_carpet_red",
+        "L": "t_carpet_red",
+        ".": "t_carpet_red",
+        "?": "t_carpet_red",
+        "1": "t_linoleum_white",
+        "2": "t_linoleum_white",
+        "3": "t_linoleum_white",
+        "4": "t_linoleum_white",
+        "|": "t_wall_p"
+      },
       "furniture": {
         "?": "f_console_broken",
         "L": "f_table",
@@ -256,6 +350,12 @@
         "L": [ { "item": "mussto_stringinst", "chance": 30, "repeat": [ 0, 4 ] } ],
         "M": [ { "item": "office", "chance": 30, "repeat": [ 0, 1 ] } ],
         "V": [ { "item": "musicstore_showpiece", "chance": 30, "repeat": [ 0, 4 ] } ]
+      },
+      "nested": {
+        "1": { "chunks": [ "arcology_2x2_gate_nw" ] },
+        "2": { "chunks": [ "arcology_2x2_gate_sw" ] },
+        "3": { "chunks": [ "arcology_2x2_gate_se" ] },
+        "4": { "chunks": [ "arcology_2x2_gate_ne" ] }
       }
     }
   },
@@ -268,21 +368,26 @@
       "mapgensize": [ 8, 8 ],
       "rotation": [ 0, 3 ],
       "rows": [
-        "HHHy yHH",
-        " .......",
+        "1 Hy y4 ",
+        "  ....  ",
         "V.LL.LL.",
         "V.GG.GG.",
         "V.BB.BB.",
         " .......",
-        "MMMM?M  ",
+        "2 MM?M3 ",
         "    A   "
       ],
       "terrain": {
         " ": "t_floor",
+        "1": "t_linoleum_white",
+        "2": "t_linoleum_white",
+        "3": "t_linoleum_white",
+        "4": "t_linoleum_white",
         "G": "t_carpet_yellow",
         "L": "t_carpet_yellow",
         "B": "t_carpet_yellow",
         ".": "t_carpet_yellow",
+        "|": "t_wall_p",
         "?": "t_carpet_yellow"
       },
       "furniture": {
@@ -308,6 +413,12 @@
           { "item": "elecsto_lights", "chance": 30, "repeat": [ 0, 4 ] },
           { "item": "elecsto_diy", "chance": 30, "repeat": [ 0, 4 ] }
         ]
+      },
+      "nested": {
+        "1": { "chunks": [ "arcology_2x2_gate_nw" ] },
+        "2": { "chunks": [ "arcology_2x2_gate_sw" ] },
+        "3": { "chunks": [ "arcology_2x2_gate_se" ] },
+        "4": { "chunks": [ "arcology_2x2_gate_ne" ] }
       }
     }
   },
@@ -320,17 +431,21 @@
       "mapgensize": [ 8, 8 ],
       "rotation": [ 0, 3 ],
       "rows": [
-        "AAAY YMM",
-        "MMM   AA",
+        "1 AY Y4 ",
+        "  M     ",
         "V ?     ",
         "B M  R R",
         "i G  L L",
         "B G  R R",
-        "s M     ",
-        "Q   RLyL"
+        "2 M   3 ",
+        "    RL  "
       ],
       "terrain": {
         " ": "t_linoleum_gray",
+        "1": "t_linoleum_white",
+        "2": "t_linoleum_white",
+        "3": "t_linoleum_white",
+        "4": "t_linoleum_white",
         "L": "t_linoleum_gray",
         "R": "t_linoleum_gray",
         "B": "t_linoleum_gray",
@@ -344,7 +459,8 @@
         "A": "t_linoleum_gray",
         "s": "t_linoleum_gray",
         "i": "t_linoleum_gray",
-        "?": "t_linoleum_gray"
+        "?": "t_linoleum_gray",
+        "|": "t_wall_p"
       },
       "furniture": {
         "?": "f_console_broken",
@@ -374,6 +490,12 @@
           { "item": "pizza_table", "chance": 30, "repeat": [ 0, 4 ] },
           { "item": "pizza_display", "chance": 30, "repeat": [ 0, 1 ] }
         ]
+      },
+      "nested": {
+        "1": { "chunks": [ "arcology_2x2_gate_nw" ] },
+        "2": { "chunks": [ "arcology_2x2_gate_sw" ] },
+        "3": { "chunks": [ "arcology_2x2_gate_se" ] },
+        "4": { "chunks": [ "arcology_2x2_gate_ne" ] }
       }
     }
   },

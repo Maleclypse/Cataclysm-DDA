@@ -15,6 +15,7 @@
       "Q": "t_wall_prefab_glass_shutters",
       ":": "t_door_glass_c",
       ";": "t_door_locked",
+      "0": "t_open_air",
       "o": "t_wall_prefab_glass",
       "(": "t_reinforced_glass",
       "X": "t_door_metal_locked",
