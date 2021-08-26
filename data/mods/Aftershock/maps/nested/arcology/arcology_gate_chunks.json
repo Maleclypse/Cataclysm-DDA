@@ -717,7 +717,10 @@
         "5": {
           "name": "Interior Gate Controls",
           "security": 1,
-          "options": [ { "name": "EMERGENCY OVERRIDE - OPEN GATES", "action": "open_gate", "security": 1 } ],
+          "options": [
+            { "name": "EMERGENCY OVERRIDE - OPEN GATES", "action": "open_gate", "security": 1 },
+            { "name": "EMERGENCY OVERRIDE - CLOSE GATES", "action": "close_gate", "security": 1 }
+          ],
           "failures": [ { "action": "damage" }, { "action": "shutdown" } ]
         }
       }
