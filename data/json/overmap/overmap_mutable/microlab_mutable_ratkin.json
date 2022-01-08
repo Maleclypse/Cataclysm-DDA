@@ -144,15 +144,8 @@
         "south": "hallway_to_microlab",
         "west": "hallway_to_microlab"
       },
-      "hallway_blind_end": {
-        "overmap": "microlab_generic_hallway_blind_end_north",
-        "north": { "id": "hallway_to_hallway" }
-      },
-      "rock_divisor": {
-        "overmap": "microlab_rock_border",
-        "north": "microlab_to_microlab",
-        "south": "microlab_to_microlab"
-      }
+      "hallway_blind_end": { "overmap": "microlab_generic_hallway_blind_end_north", "north": { "id": "hallway_to_hallway" } },
+      "rock_divisor": { "overmap": "microlab_rock_border", "north": "microlab_to_microlab", "south": "microlab_to_microlab" }
     },
     "root": "surface",
     "phases": [
