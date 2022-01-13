@@ -4,19 +4,35 @@
     "id": "microlab_mutable_ratkin",
     "subtype": "mutable",
     "locations": [ "subterranean" ],
-    "city_distance": [ 1, 12 ],
+    "city_distance": [ 20, -1 ],
     "city_sizes": [ 0, 20 ],
     "occurrences": [ 0, 1 ],
     "flags": [ "LAB" ],
-    "connections": [
-      { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road", "from": [ 0, 0, 0 ] },
-      { "point": [ 1, -1, -1 ], "terrain": "sewer", "connection": "sewer_tunnel", "from": [ 0, -1, -1 ] },
-      { "point": [ -1, -1, -1 ], "terrain": "sewer", "connection": "sewer_tunnel", "from": [ 0, -1, -1 ] },
-      { "point": [ -1, 1, -1 ], "terrain": "sewer", "connection": "sewer_tunnel", "from": [ 0, 1, -1 ] }
-    ],
+    "spawns": { "group": "GROUP_RATKIN_EVOLVED", "population": [ 100, 200 ], "radius": [ 5, 10 ] },
+    "//": "When connections can be added use pumping station connections as a baseline for this.",
+    "//1": "Ground level pumping station, -1 sewer, -2 lab with experimental cells, -3 converted into warrens, -4 mutagen manufacture.",
     "check_for_locations": [
       [ [ 0, 0, 0 ], [ "land" ] ],
-      [ [ 0, 0, -1 ], [ "subterranean" ] ],
+      [ [ 0, 0, 1 ], [ "open_air" ] ],
+      [ [ 0, 1, 0 ], [ "land" ] ],
+      [ [ 0, 1, 1 ], [ "open_air" ] ],
+      [ [ 0, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ 4, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ 3, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ 2, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ 1, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ -4, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ -3, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ -2, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ -1, 0, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, -4, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, -3, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, -2, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, -1, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, 4, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, 3, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, 2, -1 ], [ "subterranean_empty" ] ],
+      [ [ 0, 1, -1 ], [ "subterranean_empty" ] ],
       [ [ 0, 0, -2 ], [ "subterranean_empty" ] ],
       [ [ 4, 0, -2 ], [ "subterranean_empty" ] ],
       [ [ 3, 0, -2 ], [ "subterranean_empty" ] ],
@@ -74,13 +90,14 @@
       "duct_to_surface",
       "duct_to_entrance",
       { "id": "hallway_to_microlab", "opposite": "microlab_to_hallway" },
+      { "id": "pump_station_1_to_pump_station_2", "opposite": "pump_station_2_to_pump_station_1" },
       { "id": "microlab_to_hallway", "opposite": "hallway_to_microlab" },
       "microlab_to_microlab",
       "microlab_entry_to_station",
       "microlab_station_to_subway"
     ],
     "overmaps": {
-      "surface": { "overmap": "lab_subway_vent_shaft_surface", "below": "duct_to_surface", "locations": [ "land" ] },
+      "surface": { "overmap": "pump_station_1_north", "below": "duct_to_surface", "north": "pump_station_2_north", "locations": [ "land" ] },
       "below_entrance": { "overmap": "lab_subway_vent_shaft-1", "above": "duct_to_surface", "below": "duct_to_entrance" },
       "surface_access": {
         "overmap": "microlab_generic_vent_shaft_connector",
@@ -149,7 +166,15 @@
     },
     "root": "surface",
     "phases": [
-      [ { "overmap": "below_entrance", "max": 1 } ],
+
+        "name": "pump_station",
+        "chunk": [
+          { "overmap": "pump_station_1", "pos": [ 0, 0, 0 ], "rot": "east" },
+          { "overmap": "pump_station_1_roof", "pos": [ 0, 0, 1 ], "rot": "east" },
+          { "overmap": "pump_station_2", "pos": [ 0, 1, 0 ] },
+          { "overmap": "pump_station_2_roof", "pos": [ 0, 1, 1 ] }
+        ],
+        "max": 1,
       [ { "overmap": "surface_access", "max": 1 } ],
       [
         {
