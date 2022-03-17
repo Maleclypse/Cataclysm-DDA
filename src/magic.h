@@ -333,6 +333,8 @@ class spell_type
 
         std::set<mtype_id> targeted_monster_ids;
 
+        std::set<species_id> targeted_monster_species;
+
         // lits of bodyparts this spell applies its effect to
         body_part_set affected_bps;
 
