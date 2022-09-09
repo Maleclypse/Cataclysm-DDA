@@ -46,6 +46,7 @@
 #include "item_location.h"
 #include "itype.h"
 #include "json.h"
+#include "magic.h"
 #include "line.h"
 #include "make_static.h"
 #include "map.h"
@@ -341,8 +342,11 @@ void bionic_data::load( const JsonObject &jsobj, const std::string & )
     assign( jsobj, "capacity", capacity, false );
     assign( jsobj, "weight_capacity_bonus", weight_capacity_bonus, false );
     assign( jsobj, "act_cost", power_activate, false, 0_kJ );
+    assign( jsobj, "act_cost_mana", power_activate, false, 0 );
     assign( jsobj, "deact_cost", power_deactivate, false, 0_kJ );
+    assign(jsobj, "deact_cost_mana", power_deactivate, false, 0 );
     assign( jsobj, "trigger_cost", power_trigger, false, 0_kJ );
+    assign(jsobj, "trigger_cost_mana", power_trigger, false, 0 );
     assign( jsobj, "power_trickle", power_trickle, false, 0_kJ );
 
     optional( jsobj, was_loaded, "time", charge_time, 0_turns );
@@ -706,6 +710,9 @@ bool Character::activate_bionic( bionic &bio, bool eff_only, bool *close_bionics
         }
         if( !enough_power_for( bio.id ) ) {
             add_msg_if_player( m_info, _( "You don't have the power to activate your %s." ),
+                               bio.info().name );
+        if( !enough_mana_( bio.id ) ) {
+            add_msg_if_player( m_info, _( "You don't have the mana to activate your %s." ),
                                bio.info().name );
             return false;
         }
