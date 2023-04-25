@@ -1,0 +1,14 @@
+[
+  {
+  "id": "xe_radiant_damage",
+  "type": "damage_type",
+  "physical": true,
+  "environmental": true,
+  "magic_color": "white",
+  "name": "radiant",
+  "skill": "marksmanship",
+  "derived_from": [ "heat", 2 ],
+  "immune_flags": { "character": [ "RADIANT_IMMUNE" ], "monster": [ "RADIANTPROOF" ] },
+  "onhit_eocs": [ "EOC_RADIANT_ONHIT" ]
+  }
+]
