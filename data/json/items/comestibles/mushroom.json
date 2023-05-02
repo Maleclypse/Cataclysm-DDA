@@ -101,5 +101,20 @@
     "flags": [ "FREEZERBURN", "SMOKABLE", "FORAGE_POISON", "FORAGE_HALLU", "RAW" ],
     "smoking_result": "dry_mushroom",
     "vitamins": [ [ "vitC", 2 ], [ "iron", 2 ] ]
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "ergot_fruit",
+    "name": { "str": "ergot fruit" },
+    "weight": "69 g",
+    "color": "brown",
+    "spoils_in": "365 days",
+    "comestible_type": "FOOD",
+    "symbol": "H",
+    "description": "Ergot fruit bodies are drumstick shaped fruiting structures, that spray spores near themselves seeking host plants.  It is poisonous and should not be eaten.",
+    "price": 140,
+    "price_postapoc": 50,
+    "material": [ "mushroom" ],
+    "volume": "250 ml"
   }
 ]
