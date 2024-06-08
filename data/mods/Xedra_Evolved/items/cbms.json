@@ -43,5 +43,41 @@
     "description": "A syringe that extends out into two tubes that snake up through the nostrils and down to the lungs in order to get the spores deep into their new home, where they can best spread through the body.",
     "price": "3 kUSD 500 USD",
     "difficulty": 0
-  }
+  },
+  {
+    "id": "xe_amplified_immune_system",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Amplified Immune System" },
+    "description": "A",
+    "price": "1 kUSD 250 USD",
+    "difficulty": 0
+  },
+  {
+    "id": "xe_elastic_joints",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Elastic Joints" },
+    "description": "A syringe that extends out into two tubes that snake up through the nostrils and down to the lungs in order to get the spores deep into their new home, where they can best spread through the body.",
+    "price": "3 kUSD 500 USD",
+    "difficulty": 0
+  },
+  {
+    "id": "xe_chem_gland_pacifier",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Chem Gland Pacifier" },
+    "description": "Implanted in the neck and sealed off via a sphincter the exhalation spray is triggered by a learned flexing of throat muscles.  A deep breath followed by a yawn like contraction of the muscles and the sphincter opens, expelling the pressurized gas in a cone in front of the user.  The body uses extra calories and vitamins to produce the pacification chemicals that will turn humans passive for 20 seconds.",
+    "price": "9 kUSD 500 USD",
+    "difficulty": 0
+  },
+  {
+    "id": "xe_chem_gland_pacifier",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Chem Gland Pacifier" },
+    "description": "Implanted in the neck and sealed off via a sphincter the exhalation spray is triggered by a learned flexing of throat muscles.  A deep breath followed by a yawn like contraction of the muscles and the sphincter opens, expelling the pressurized gas in a cone in front of the user.  The body uses extra calories and vitamins to produce the pacification chemicals that will turn humans passive for 20 seconds.",
+    "price": "9 kUSD 500 USD",
+    "difficulty": 0
+  },
 ]
