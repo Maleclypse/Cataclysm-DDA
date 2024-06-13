@@ -80,4 +80,31 @@
     "price": "9 kUSD 500 USD",
     "difficulty": 0
   },
+  {
+    "id": "xe_chem_gas_jet",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Gas Jet Sprayer" },
+    "description": "Chemical warfare implanted from your elbows to the palm of your hand.  Carries a variety of loads from sleep, blister, nerve and poison.",
+    "price": "9 kUSD 500 USD",
+    "difficulty": 0
+  },
+  {
+    "id": "xe_carrier_pigeon",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Carrier Pigeon" },
+    "description": "Containerized wet storage.  For that hot, hot data, you can't risk knowing.",
+    "price": "9 kUSD 500 USD",
+    "difficulty": 0
+  },
+  {
+    "id": "xe_distributed_heart",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Distributed Heart" },
+    "description": "Each of the chambers of the heart were split and made to live indepently of one another.  Greatly imrpoves surviveability of torso wounds.",
+    "price": "19 kUSD 750 USD",
+    "difficulty": 0
+  },
 ]
