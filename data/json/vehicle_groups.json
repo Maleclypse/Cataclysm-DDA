@@ -705,6 +705,19 @@
     ]
   },
   {
+    "id": "heavy_industry_parking",
+    "type": "vehicle_group",
+    "//": "Vehicles parked outside of heavy industry locations",
+    "vehicles": [
+      [ "truck_trailer", 20 ],
+      [ "semi_truck", 120 ],
+      [ "flatbed_truck", 40 ],
+      [ "cube_van", 80 ],
+      [ "tatra_truck", 20 ],
+      [ "trencher", 40 ]
+    ]
+  },
+  {
     "id": "warehouse_vehicles",
     "type": "vehicle_group",
     "//": "Lifting and hauling vehicles for warehouses, loading bays, and similar locations",
