@@ -322,6 +322,7 @@ static const json_character_flag json_flag_MYOPIC( "MYOPIC" );
 static const json_character_flag json_flag_MYOPIC_IN_LIGHT( "MYOPIC_IN_LIGHT" );
 static const json_character_flag json_flag_NIGHT_VISION( "NIGHT_VISION" );
 static const json_character_flag json_flag_NON_THRESH( "NON_THRESH" );
+static const json_character_flag json_flag_NO_HUNGER( "NO_HUNGER" );
 static const json_character_flag json_flag_NO_RADIATION( "NO_RADIATION" );
 static const json_character_flag json_flag_NO_THIRST( "NO_THIRST" );
 static const json_character_flag json_flag_PAIN_IMMUNE( "PAIN_IMMUNE" );
@@ -5167,6 +5168,10 @@ needs_rates Character::calc_needs_rates() const
     } else {
         rates.recovery = 0;
     }
+
+    if( has_flag(json_flag_NO_HUNGER ) ) {
+        // Sets hunger to 0
+        p.set_hunger( 0 );
 
     if( has_activity( ACT_TREE_COMMUNION ) ) {
         // Much of the body's needs are taken care of by the trees.

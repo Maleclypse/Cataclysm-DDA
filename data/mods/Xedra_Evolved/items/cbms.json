@@ -116,5 +116,13 @@
     "price": "750 USD",
     "difficulty": 0
   },
-  
+  {
+    "id": "xe_appetite_controler",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Appeteite Controller" },
+    "description": "If you feel like you are controlled by your hunger this bionic will allow you to turn the tables on your stomach.  When active this cbm will prevent you from feeling any hunger.  Sideeffects may include malnutrition and permanent metabolic disruption.",
+    "price": "3750 USD",
+    "difficulty": 0
+  },
 ]
