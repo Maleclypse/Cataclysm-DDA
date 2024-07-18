@@ -125,4 +125,13 @@
     "price": "3750 USD",
     "difficulty": 0
   },
+  {
+    "id": "xe_deathsleep_neuralware",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Deathsleep Neuralware" },
+    "description": "The Deathsleep Neuralware fakes the pallor and symptoms of death.  When activated the user actively pretends to be dead and reduces the aggression of nearby enemies.",
+    "price": "3750 USD",
+    "difficulty": 0
+  },
 ]
