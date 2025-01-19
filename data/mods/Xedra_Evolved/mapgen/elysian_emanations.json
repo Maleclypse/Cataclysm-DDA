@@ -1,0 +1,265 @@
+[
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "elysian_emanations_entrance" ],
+    "object": {
+      "fill_ter": "t_floor",
+      "rows": [
+        ".`''''`''''`''''`''''`,.",
+        ".`''''`''''`''''`''''`,.",
+        ".`''''`''''`''''`''''`,.",
+        ".`''''`''''`''''`''''`,.",
+        ".`''''`''''`''''`''''`,,",
+        ".##~~~~~~##**##~~~~~~##,",
+        ".#              N     #,",
+        ".#{   }{   ][   Na   O#,",
+        ".#{   }{   ][   N    O#,",
+        ".#{   }{   ][   ]]]   #,",
+        ".#{   }{   ][        }#,",
+        ".#{   }{   }{   ][   }#,",
+        ".#{   }{   }{   ][   }#,",
+        ".#{   }{   }{   ][   }#,",
+        ".#{   }{   }{   ][   }#,",
+        ".#{   }{   }{        }#,",
+        ".#{   }{   }{  ||%%%%|#,",
+        ".#{   }{   }{  |y d? X#,",
+        ".#{   }{       +  dh }#4",
+        ".#{   }{   ||^||  d  }#,",
+        ".#{   }{   |___|     }#,",
+        ".#{        |S_&|{}   }#,",
+        ".##################+###,",
+        "..............,U<U,,U,,,"
+      ],
+      "palettes": [ "parametrized_walls_palette" ],
+      "terrain": {
+        ".": "t_region_groundcover_urban",
+        " ": "t_elysian_border",
+        "S": "t_carpet_concrete_red",
+        "&": "t_carpet_concrete_red",
+        "_": "t_carpet_concrete_red",
+        "{": "t_carpet_concrete_red",
+        "}": "t_carpet_concrete_red",
+        "[": "t_carpet_concrete_red",
+        "]": "t_carpet_concrete_red",
+        "'": "t_pavement",
+        "U": "t_sidewalk",
+        ",": "t_sidewalk",
+        "`": "t_pavement_y",
+        "^": "t_door_c",
+        "*": "t_door_locked",
+        "+": [ [ "t_door_metal_pickable", 80 ], [ "t_door_metal_o", 5 ], [ "t_door_metal_c", 15 ] ],
+        "~": "t_window_alarm",
+        "%": "t_reinforced_glass",
+        "4": "t_gutter_downspout",
+        "<": "t_ladder_up"
+      },
+      "furniture": {
+        "?": "f_console_broken",
+        "U": [ "f_dumpster", "f_recycle_bin" ],
+        "y": [ "f_indoor_plant_y", "f_indoor_plant" ],
+        "X": "f_safe_l",
+        "d": "f_desk",
+        "N": "f_counter",
+        "a": "f_stool",
+        "h": "f_chair",
+        "S": "f_sink",
+        "{": "f_rack_l",
+        "}": "f_rack_l",
+        "[": "f_rack_l",
+        "]": "f_rack_l",
+        "O": [ [ "f_gunsafe_ml", 90 ], [ "f_gunsafe_o", 10 ] ]
+      },
+      "toilets": { "&": {  } },
+      "items": {
+        "X": { "item": "my_precious", "chance": 80, "repeat": [ 1, 3 ] },
+        "{": { "item": "pawn", "chance": 80, "repeat": [ 1, 3 ] },
+        "}": { "item": "pawn", "chance": 80, "repeat": [ 1, 3 ] },
+        "[": { "item": "pawn_valuable", "chance": 80, "repeat": [ 1, 3 ] },
+        "]": { "item": "pawn_valuable", "chance": 80, "repeat": [ 1, 3 ] },
+        "O": { "item": "pawn_guns", "chance": 50, "repeat": [ 1, 3 ] }
+      },
+      "place_npcs": [ { "class": "elysian_pawn_owner", "x": 1, "y": 2, "unique_id": "BEL_ARALU" } ],
+      "place_signs": [ { "signage": "Elysian Emanations", "x": 9, "y": 4 } ],
+      "place_loot": [
+        { "group": "office", "x": 18, "y": [ 17, 19 ], "chance": 90 },
+        { "group": "homeguns", "x": 21, "y": [ 18, 21 ], "chance": 50, "repeat": [ 1, 2 ] },
+        { "group": "harddrugs", "x": [ 16, 17 ], "y": 21, "chance": 20, "repeat": [ 1, 2 ] },
+        { "group": "cash_register_random", "x": 16, "y": [ 6, 8 ] }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "elysian_emanations_inside" ],
+    "object": {
+      "fill_ter": "t_floor",
+      "rows": [
+        "||||||||||||||||||||||||",
+        "|......................|",
+        "|......................|",
+        "|......................|",
+        "|......................|",
+        "|##~~~~~~##**##~~~~~~##|",
+        "|#              N     #|",
+        "|#{   }{   ][   Na    #|",
+        "|#{   }{   ][   N     #|",
+        "|#                    #|",
+        "|#                    #|",
+        "|#                    #|",
+        "|#                    #|",
+        "|#                    #|",
+        "|##+######<#######4####|",
+        "|#     #      #       #|",
+        "|#     #      #       #|",
+        "|#     #      #       #|",
+        "|#     #      #       #|",
+        "|#     #      #       #|",
+        "|#     #      #       #|",
+        "|#     #      #       #|",
+        "|######################|",
+        "||||||||||||||||||||||||"
+      ],
+      "palettes": [ "parametrized_walls_palette" ],
+      "terrain": {
+      	"|": "t_elysian_edge",
+        ".": "t_elysian_border_inside",
+        " ": "t_elysian_border",
+        "S": "t_carpet_concrete_red",
+        "&": "t_carpet_concrete_red",
+        "_": "t_carpet_concrete_red",
+        "{": "t_carpet_concrete_red",
+        "}": "t_carpet_concrete_red",
+        "[": "t_carpet_concrete_red",
+        "]": "t_carpet_concrete_red",
+        "'": "t_pavement",
+        "U": "t_sidewalk",
+        ",": "t_sidewalk",
+        "`": "t_pavement_y",
+        "^": "t_door_c",
+        "*": "t_door_locked",
+        "+": "t_door_1",
+        "%": "t_reinforced_glass",
+        "4": "t_door_2",
+        "<": "t_door_3",
+      },
+      "furniture": {
+        "?": "f_console_broken",
+        "U": [ "f_dumpster", "f_recycle_bin" ],
+        "y": [ "f_indoor_plant_y", "f_indoor_plant" ],
+        "X": "f_safe_l",
+        "d": "f_desk",
+        "N": "f_counter",
+        "a": "f_stool",
+        "h": "f_chair",
+        "S": "f_sink",
+        "{": "f_rack_l",
+        "}": "f_rack_l",
+        "[": "f_rack_l",
+        "]": "f_rack_l"
+      },
+      "toilets": { "&": {  } },
+      "items": {
+        "X": { "item": "my_precious", "chance": 80, "repeat": [ 1, 3 ] },
+        "{": { "item": "pawn", "chance": 80, "repeat": [ 1, 3 ] },
+        "}": { "item": "pawn", "chance": 80, "repeat": [ 1, 3 ] },
+        "[": { "item": "pawn_valuable", "chance": 80, "repeat": [ 1, 3 ] },
+        "]": { "item": "pawn_valuable", "chance": 80, "repeat": [ 1, 3 ] },
+        "O": { "item": "pawn_guns", "chance": 50, "repeat": [ 1, 3 ] }
+      },
+      "place_signs": [ { "signage": "Elysian Emanations", "x": 9, "y": 4 } ],
+      "place_loot": [
+        { "group": "office", "x": 18, "y": [ 17, 19 ], "chance": 90 },
+        { "group": "homeguns", "x": 21, "y": [ 18, 21 ], "chance": 50, "repeat": [ 1, 2 ] },
+        { "group": "harddrugs", "x": [ 16, 17 ], "y": 21, "chance": 20, "repeat": [ 1, 2 ] },
+        { "group": "cash_register_random", "x": 16, "y": [ 6, 8 ] }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_elysian_emanations_nearby",
+    "eoc_type": "EVENT",
+    "required_event": "avatar_enters_omt",
+    "condition": {
+      "and": [
+        { "u_near_om_location": "elysian_emanations_entrance" },
+        { "math": [ "u_elysian_emanations_entered < 1" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_message": "<color_red>This area feels inhabited in a way that you probably wouldn't have noticed prior to the Cataclysm.  Every step you take towards the nearby pawn shop feels lighter and every step away heavier as though gravity were changing in relation to your movements.</color>",
+        "type": "neutral",
+        "popup": true
+      },
+      { "math": [ "u_elysian_emanations_entered = 1" ] },
+      { "math": [ "only_needed_if_reseting_state = 0" ] }
+    ]
+  },
+    {
+    "type": "effect_on_condition",
+    "id": "EOC_elysian_emanations_entry_event",
+    "eoc_type": "EVENT",
+    "required_event": "avatar_enters_omt",
+    "condition": { "u_at_om_location": "elysian_emanations_entrance" },
+    "effect": [ { "run_eocs": "EOC_elysian_emanations_init" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_elysian_emanations_init",
+    "condition": {
+      "and": [
+        { "u_at_om_location": "elysian_emanations_entrance" },
+        {
+          "and": [
+            { "not": { "u_has_effect": "CONTRACTED" } },
+            { "not": { "u_has_trait": "UNCONTRACTED" } },
+            { "not": { "u_is_on_terrain": "t_elysian_border" } }
+            { "math": [ "u_elysian_emanations_entered < 2" ] }
+          ]
+        }
+      ]
+    },
+    "false_effect": [
+      {
+        "if": {
+          "and": [
+            { "not": { "u_has_trait": "UNCONTRACTED" } },
+            { "u_at_om_location": "elysian_emanations_entrance" }
+          ]
+        },
+        "then": { "run_eocs": [ "EOC_elysian_emanations_init" ], "time_in_future": "1 seconds" }
+      }
+    ],
+    "effect": [
+      {
+        "place_override": { "global_val": "place_name", "default_str": "Elysian Emanations" },
+        "length": "1 day",
+        "key": "elysian_escape_key"
+      },
+      { "custom_light_level": 70, "length": "1 day", "key": "elysian_escape_key" },
+      {
+        "u_location_variable": { "global_val": "elysian_emanations_inside" },
+        "target_params": { "om_terrain": "elysian_emanations_inside", "min_distance": 0, "z": 0 },
+        "z_adjust": 6,
+        "z_override": true
+      },
+      {
+        "revert_location": { "global_val": "elysian_emanations_inside" },
+        "time_in_future": "infinite",
+        "key": "elysian_escape_key"
+      },
+      { "mapgen_update": "elysian_emanations_inside", "target_var": { "global_val": "elysian_emanations_inside" } },
+      { "u_location_variable": { "u_val": "elysian_entry" }, "z_adjust": 6 },
+      { "u_teleport": { "u_val": "elysian_entry" }, "fail_message": "Oops!", "force": true },
+      {
+        "u_message": "You are inside the pawn shop but it seems different than how it looked before you entered.",
+        "type": "good",
+        "popup": true
+      },
+      { "math": [ "u_elysian_emanations_entered = 2" ] }
+    ]
+  }
+]

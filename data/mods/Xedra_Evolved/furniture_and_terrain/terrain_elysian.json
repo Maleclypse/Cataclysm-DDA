@@ -1,0 +1,34 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_elysian_border",
+    "symbol": ".",
+    "color": "cyan",
+    "connect_groups": [ "INDOORFLOOR", "WOODFLOOR" ],
+    "connects_to": "WOODFLOOR",
+    "move_cost": 2,
+    "comfort": 1,
+    "roof": "t_wood_treated_roof",
+    "flags": [ "TRANSPARENT", "FLAMMABLE_HARD", "SUPPORTS_ROOF", "COLLAPSES", "INDOORS", "FLAT", "ROAD" ]
+  },
+  {
+    "type": "terrain",
+    "id": "t_elysian_border_inside",
+    "name": "floating in the clouds",
+    "description": "Where the street was previously is now a cloud.  Would it even hold your weight or would you step right through to fall forever?",
+    "copy-from": "t_elysian_border",
+    "color": "white"
+  },
+  {
+    "type": "terrain",
+    "id": "t_elysian_edge",
+    "name": "floating in the clouds",
+    "description": "Huh, there's nothing but clouds and open sky beyond this point.  Literally nothing, no ground below, no other islands of being floating in the distance, nothing.",
+    "symbol": " ",
+    "color": "white",
+    "move_cost": 0,
+    "connect_groups": "WALL",
+    "connects_to": "WALL",
+    "flags": [ "SUPPORTS_ROOF", "NOITEM", "WALL" ],
+  }
+]
