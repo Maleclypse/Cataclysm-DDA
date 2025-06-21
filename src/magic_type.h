@@ -55,6 +55,14 @@ class magic_type
         std::optional<magic_energy_type> energy_source;
         std::set<std::string> cannot_cast_flags; // string flags
         std::optional<std::string> cannot_cast_message;
+        std::set<std::string> cannot_target_flags;
+        std::string cannot_target_message;
+
+        std::set<std::string> resist_flags;
+        std::string resist_message;
+
+        std::set<std::string> immune_flags;
+        std::string immune_message;
         std::optional<int> max_book_level;
         dbl_or_var failure_cost_percent;
         dbl_or_var failure_exp_percent;

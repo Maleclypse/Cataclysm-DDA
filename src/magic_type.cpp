@@ -57,6 +57,33 @@ void magic_type::load( const JsonObject &jo, std::string_view src )
         cannot_cast_flags.insert( cannot_cast_flag );
     }
     optional( jo, was_loaded, "cannot_cast_message", cannot_cast_message );
+    if( jo.has_array( "cannot_target_flags" ) ) {
+        for( auto &cannot_target_flag : jo.get_string_array( "cannot_target_flags" ) ) {
+            cannot_target_flags.insert( cannot_target_flag );
+        }
+    } else if( jo.has_string( "cannot_target_flags" ) ) {
+        const std::string cannot_target_flag = jo.get_string( "cannot_target_flags" );
+        cannot_target_flags.insert( cannot_target_flag );
+    }
+    optional( jo, was_loaded, "cannot_target_message", cannot_target_message );
+    if( jo.has_array( "resist_flags" ) ) {
+        for( auto &resist_flag : jo.get_string_array( "resist_flags" ) ) {
+            resist_flags.insert( resist_flag );
+        }
+    } else if( jo.has_string( "resist_flags" ) ) {
+        const std::string resist_flag = jo.get_string( "resist_flags" );
+        resist_flags.insert( resist_flag );
+    }
+    optional( jo, was_loaded, "resist_message", resist_message );
+    if( jo.has_array( "immune_flags" ) ) {
+        for( auto &immune_flag : jo.get_string_array( "immune_flags" ) ) {
+            immune_flags.insert( immune_flag );
+        }
+    } else if( jo.has_string( "immune_flags" ) ) {
+        const std::string immune_flag = jo.get_string( "immune_flags" );
+        immune_flags.insert( immune_flag );
+    }
+    optional( jo, was_loaded, "immune_message", immune_message );
     optional( jo, was_loaded, "max_book_level", max_book_level );
     if( !was_loaded || jo.has_member( "failure_cost_percent" ) ) {
         failure_cost_percent = get_dbl_or_var( jo, "failure_cost_percent", false,
@@ -87,6 +114,12 @@ void magic_type::serialize( JsonOut &json ) const
     json.member( "energy_source", energy_source );
     json.member( "cannot_cast_flags", cannot_cast_flags, std::set<std::string> {} );
     json.member( "cannot_cast_message", cannot_cast_message );
+    json.member( "cannot_target_flags", cannot_target_flags, std::set<std::string> {} );
+    json.member( "cannot_target_message", cannot_target_message );
+    json.member( "resist_flags", resist_flags, std::set<std::string> {} );
+    json.member( "resist_message", resist_message );
+    json.member( "immune_flags", immune_flags, std::set<std::string> {} );
+    json.member( "immune_message", immune_message );
     json.member( "max_book_level", max_book_level );
     json.member( "failure_cost_percent", static_cast<float>( failure_cost_percent.min.dbl_val.value() ),
                  0.0f );
