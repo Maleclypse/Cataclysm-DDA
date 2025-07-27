@@ -485,5 +485,46 @@
       { "u_message": "You are losing your stolen blood through your bleeding wounds!", "type": "bad" },
       { "run_eocs": "EOC_VAMPIRE_BLEED_STOLEN_BLOOD", "time_in_future": [ "10 s", "10 s" ] }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_FIND_CHEATERS",
+    "//": "This is necessary for powers whose effect on NPCs is variable, since the jmath equations return the avatar's traits",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "or": [ { "u_has_trait": "VAMPIRE" }, { "u_has_trait": "VAMPIRE2" }, { "u_has_trait": "VAMPIRE3" } ] },
+    "effect": [
+      { "math": [ "u_vampire_total_tier_one_traits = vampire_total_tier_one_traits_plus_potency()" ] },
+      { "math": [ "u_vampire_total_tier_two_traits = vampire_total_tier_two_traits()" ] },
+      { "math": [ "u_vampire_total_tier_three_traits = vampire_total_tier_three_traits()" ] },
+      { "math": [ "u_vampire_total_tier_four_traits = vampire_total_tier_four_traits_plus_potence()" ] },
+      { "math": [ "u_vampire_total_tier_five_traits = vampire_total_tier_five_traits_plus_cauldron()" ] }
+    ]
   }
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_TARGET_CHEATERS",
+    "eoc_type": "EVENT",
+    "required_event": "character_wakes_up",
+    "condition": { "math": [ "u_sum_traits_of_category_char_has('IMPOSSIBLE_COMBOS')" > 0 ] },
+    "effect": [
+      { "u_message": "nightmares", "snippet": true, "type": "bad" },
+      { "u_add_morale": "morale_nightmare", "bonus": [ -15, -30 ], "max_bonus": -30 },
+      { "math": [ "dream_counter = 1" ] },
+      { "run_eocs": "EOC_RESET_DREAM_COUNTER", "time_in_future": 1 }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_HAIGHT_NIGHTMARES",
+    "eoc_type": "EVENT",
+    "required_event": "character_wakes_up",
+    "condition": { "and": [ { "u_has_effect": "nightmares" }, { "math": [ "dream_counter == 0" ] } ] },
+    "effect": [
+      { "u_message": "nightmares", "snippet": true, "type": "bad" },
+      { "u_add_morale": "morale_nightmare", "bonus": [ -15, -30 ], "max_bonus": -30 },
+      { "math": [ "dream_counter = 1" ] },
+      { "run_eocs": "EOC_RESET_DREAM_COUNTER", "time_in_future": 1 }
+    ]
+  },
 ]
