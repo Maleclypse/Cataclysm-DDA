@@ -112,6 +112,7 @@ enum class direction : unsigned int;
 static const activity_id ACT_FERTILIZE_PLOT( "ACT_FERTILIZE_PLOT" );
 static const activity_id ACT_MOVE_LOOT( "ACT_MOVE_LOOT" );
 static const activity_id ACT_MULTIPLE_BUTCHER( "ACT_MULTIPLE_BUTCHER" );
+static const activity_id ACT_MULTIPLE_BLEED( "ACT_MULTIPLE_BLEED" );
 static const activity_id ACT_MULTIPLE_CHOP_PLANKS( "ACT_MULTIPLE_CHOP_PLANKS" );
 static const activity_id ACT_MULTIPLE_CHOP_TREES( "ACT_MULTIPLE_CHOP_TREES" );
 static const activity_id ACT_MULTIPLE_CONSTRUCTION( "ACT_MULTIPLE_CONSTRUCTION" );
@@ -168,6 +169,7 @@ static const trait_id trait_SHELL2( "SHELL2" );
 static const trait_id trait_SHELL3( "SHELL3" );
 static const trait_id trait_WAYFARER( "WAYFARER" );
 
+static const zone_type_id zone_type_BLEED( "BLEED" );
 static const zone_type_id zone_type_CHOP_TREES( "CHOP_TREES" );
 static const zone_type_id zone_type_CONSTRUCTION_BLUEPRINT( "CONSTRUCTION_BLUEPRINT" );
 static const zone_type_id zone_type_DISASSEMBLE( "DISASSEMBLE" );
@@ -1487,7 +1489,8 @@ static void loot()
         MultiMining = 8192,
         MultiDis = 16384,
         MultiMopping = 32768,
-        UnloadLoot = 65536
+        UnloadLoot = 65536,
+        MultiBleed = 131072
     };
 
     Character &player_character = get_player_character();
@@ -1533,6 +1536,7 @@ static void loot()
     flags |= g->check_near_zone( zone_type_DISASSEMBLE,
                                  player_character.pos_bub() ) ? MultiDis : 0;
     flags |= g->check_near_zone( zone_type_MOPPING, player_character.pos_bub() ) ? MultiMopping : 0;
+    flags |= g->check_near_zone( zone_type_BLEED, player_character.pos_bub() ) ? MultiBleed : 0;
     if( flags == 0 ) {
         add_msg( m_info, _( "There is no compatible zone nearby." ) );
         add_msg( m_info, _( "Compatible zones are %s and %s" ),
@@ -1608,6 +1612,10 @@ static void loot()
     }
     if( flags & MultiMopping ) {
         menu.addentry_desc( MultiMopping, true, 'p', _( "Mop area" ), _( "Mop clean the area." ) );
+    }
+    if( flags & MultiBleed ) {
+    menu.addentry_desc( MultiBleed, true, 'L', _( "Bleed corpses" ),
+        wrap60( _( "Auto-bleed anything in bleed zones - auto-fetch tools." ) ) );
     }
 
     menu.query();
@@ -1686,6 +1694,9 @@ static void loot()
             break;
         case MultiMopping:
             player_character.assign_activity( ACT_MULTIPLE_MOP );
+            break;
+        case MultiBleed:
+            player_character.assign_activity( ACT_MULTIPLE_BLEED );
             break;
         default:
             debugmsg( "Unsupported flag" );

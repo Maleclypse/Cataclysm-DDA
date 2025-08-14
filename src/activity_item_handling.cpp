@@ -84,6 +84,7 @@ static const activity_id ACT_FETCH_REQUIRED( "ACT_FETCH_REQUIRED" );
 static const activity_id ACT_FISH( "ACT_FISH" );
 static const activity_id ACT_JACKHAMMER( "ACT_JACKHAMMER" );
 static const activity_id ACT_MOVE_LOOT( "ACT_MOVE_LOOT" );
+static const activity_id ACT_MULTIPLE_BLEED( "ACT_MULTIPLE_BLEED" );
 static const activity_id ACT_MULTIPLE_BUTCHER( "ACT_MULTIPLE_BUTCHER" );
 static const activity_id ACT_MULTIPLE_CHOP_PLANKS( "ACT_MULTIPLE_CHOP_PLANKS" );
 static const activity_id ACT_MULTIPLE_CHOP_TREES( "ACT_MULTIPLE_CHOP_TREES" );
@@ -940,6 +941,7 @@ static bool are_requirements_nearby(
     static const auto check_weight_if = []( const activity_id & id ) {
         return id == ACT_MULTIPLE_FARM ||
                id == ACT_MULTIPLE_CHOP_PLANKS ||
+               id == ACT_MULTIPLE_BLEED ||
                id == ACT_MULTIPLE_BUTCHER ||
                id == ACT_VEHICLE_DECONSTRUCTION ||
                id == ACT_VEHICLE_REPAIR ||
@@ -1207,6 +1209,28 @@ static activity_reason_info can_do_activity_there( const activity_id &act, Chara
             return activity_reason_info::fail( do_activity_reason::NO_ZONE );
         }
     }
+    if( act == ACT_MULTIPLE_BLEED ) {
+        std::vector<item> corpses;
+        int big_count = 0;
+        int small_count = 0;
+        for( const item &i : here.i_at( src_loc ) ) {
+            // make sure nobody else is working on that corpse right now
+            if( i.is_corpse() && !i.has_var( "activity_var" ) ) {
+                const mtype corpse = *i.get_mtype();
+                if( corpse.size > creature_size::medium ) {
+                    big_count += 1;
+                } else {
+                    small_count += 1;
+                }
+                corpses.push_back( i );
+            }
+        }
+        bool b_rack_present = false;
+        for( const tripoint_bub_ms &pt : here.points_in_radius( src_loc, 2 ) ) {
+            if( here.has_flag_furn( ter_furn_flag::TFLAG_BUTCHER_EQ, pt ) ) {
+                b_rack_present = true;
+            }
+        }
     if( act == ACT_MULTIPLE_BUTCHER ) {
         std::vector<item> corpses;
         int big_count = 0;
@@ -1507,6 +1531,7 @@ static std::vector<std::tuple<tripoint_bub_ms, itype_id, int>> requirements_map(
     zone_manager &mgr = zone_manager::get_manager();
     const bool pickup_task = you.backlog.front().id() == ACT_MULTIPLE_FARM ||
                              you.backlog.front().id() == ACT_MULTIPLE_CHOP_PLANKS ||
+                             you.backlog.front().id() == ACT_MULTIPLE_BLEED ||
                              you.backlog.front().id() == ACT_MULTIPLE_BUTCHER ||
                              you.backlog.front().id() == ACT_MULTIPLE_CHOP_TREES ||
                              you.backlog.front().id() == ACT_VEHICLE_DECONSTRUCTION ||
@@ -1921,6 +1946,7 @@ static bool fetch_activity(
                                                      you.backlog.front().id() == ACT_MULTIPLE_CHOP_PLANKS ||
                                                      you.backlog.front().id() == ACT_VEHICLE_DECONSTRUCTION ||
                                                      you.backlog.front().id() == ACT_VEHICLE_REPAIR ||
+                                                     you.backlog.front().id() == ACT_MULTIPLE_BLEED ||
                                                      you.backlog.front().id() == ACT_MULTIPLE_BUTCHER ||
                                                      you.backlog.front().id() == ACT_MULTIPLE_CHOP_TREES ||
                                                      you.backlog.front().id() == ACT_MULTIPLE_FISH ||
@@ -2657,6 +2683,9 @@ static zone_type_id get_zone_for_act( const tripoint_bub_ms &src_loc, const zone
     }
     if( act_id == ACT_MULTIPLE_FARM ) {
         ret = zone_type_FARM_PLOT;
+    }
+    if( act_id == ACT_MULTIPLE_BLEED ) {
+        ret = zone_type_LOOT_CORPSE;
     }
     if( act_id == ACT_MULTIPLE_BUTCHER ) {
         ret = zone_type_LOOT_CORPSE;

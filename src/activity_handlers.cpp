@@ -117,6 +117,7 @@ static const activity_id ACT_HEATING( "ACT_HEATING" );
 static const activity_id ACT_JACKHAMMER( "ACT_JACKHAMMER" );
 static const activity_id ACT_MEND_ITEM( "ACT_MEND_ITEM" );
 static const activity_id ACT_MOVE_LOOT( "ACT_MOVE_LOOT" );
+static const activity_id ACT_MULTIPLE_BLEED( "ACT_MULTIPLE_BLEED" );
 static const activity_id ACT_MULTIPLE_BUTCHER( "ACT_MULTIPLE_BUTCHER" );
 static const activity_id ACT_MULTIPLE_CHOP_PLANKS( "ACT_MULTIPLE_CHOP_PLANKS" );
 static const activity_id ACT_MULTIPLE_CHOP_TREES( "ACT_MULTIPLE_CHOP_TREES" );
@@ -231,6 +232,7 @@ activity_handlers::do_turn_functions = {
     { ACT_MULTIPLE_CONSTRUCTION, multiple_construction_do_turn },
     { ACT_MULTIPLE_MINE, multiple_mine_do_turn },
     { ACT_MULTIPLE_MOP, multiple_mop_do_turn },
+    { ACT_MULTIPLE_BLEED, multiple_bleed_do_turn },
     { ACT_MULTIPLE_BUTCHER, multiple_butcher_do_turn },
     { ACT_MULTIPLE_FARM, multiple_farm_do_turn },
     { ACT_FETCH_REQUIRED, fetch_do_turn },
@@ -2160,6 +2162,11 @@ void activity_handlers::multiple_mop_do_turn( player_activity *act, Character *y
 }
 
 void activity_handlers::multiple_chop_planks_do_turn( player_activity *act, Character *you )
+{
+    generic_multi_activity_handler( *act, *you );
+}
+
+void activity_handlers::multiple_bleed_do_turn( player_activity *act, Character *you )
 {
     generic_multi_activity_handler( *act, *you );
 }
