@@ -210,6 +210,7 @@ void generic_game_do_turn( player_activity *act, Character *you );
 void hand_crank_do_turn( player_activity *act, Character *you );
 void jackhammer_do_turn( player_activity *act, Character *you );
 void move_loot_do_turn( player_activity *act, Character *you );
+void multiple_bleed_do_turn( player_activity *act, Character *you );
 void multiple_butcher_do_turn( player_activity *act, Character *you );
 void multiple_chop_planks_do_turn( player_activity *act, Character *you );
 void multiple_construction_do_turn( player_activity *act, Character *you );
