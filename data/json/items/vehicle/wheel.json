@@ -147,8 +147,25 @@
     "melee_damage": { "bash": 6 }
   },
   {
+    "abstract": "tire_rubber",
+    "type": "ITEM",
+    "category": "veh_parts",
+    "name": { "str": "internal combustion engine", "//~": "NO_I18N" },
+    "flags": [ "NONCONDUCTIVE" ],
+    "symbol": "]",
+    "material": [ "rubber" ],
+    "faults": [
+      { "fault": "fault_tire_puncture" },
+      { "fault": "fault_tire_bulge" },
+      { "fault": "fault_tire_valve_stem" },
+      { "fault": "fault_tire_low_air" }
+    ],
+    "color": "dark_gray"
+  },
+  {
     "id": "tire_medium",
     "type": "ITEM",
+    "copy-from": "tire_rubber",
     "category": "veh_parts",
     "looks_like": "wheel",
     "name": { "str": "17\" car tire" },
@@ -157,45 +174,35 @@
     "volume": "10 L",
     "longest_side": "432 mm",
     "price": "50 USD",
-    "price_postapoc": "5 USD",
-    "material": [ "rubber" ],
-    "flags": [ "NONCONDUCTIVE" ],
-    "symbol": "]",
-    "color": "dark_gray"
+    "price_postapoc": "5 USD"
   },
   {
     "id": "tire_medium_slick",
     "type": "ITEM",
     "category": "veh_parts",
     "looks_like": "wheel_slick",
+    "copy-from": "tire_rubber",
     "name": { "str": "16\" racing tire" },
     "description": "A slick 16\" racing car tire for fitting to a medium steel rim.",
     "weight": "7355 g",
     "volume": "13750 ml",
     "longest_side": "407 mm",
     "price": "200 USD",
-    "price_postapoc": "5 USD",
-    "material": [ "rubber" ],
-    "flags": [ "NONCONDUCTIVE" ],
-    "symbol": "]",
-    "color": "dark_gray"
+    "price_postapoc": "5 USD"
   },
   {
     "id": "tire_motorbike",
     "type": "ITEM",
     "category": "veh_parts",
     "looks_like": "wheel_motorbike",
+    "copy-from": "tire_rubber",
     "name": { "str": "16\" motorbike tire" },
     "description": "A 16\" motorbike tire for fitting to a steel motorbike rim.",
     "weight": "2443 g",
     "volume": "8250 ml",
     "longest_side": "407 mm",
     "price": "100 USD",
-    "price_postapoc": "3 USD",
-    "material": [ "rubber" ],
-    "flags": [ "NONCONDUCTIVE" ],
-    "symbol": "]",
-    "color": "dark_gray"
+    "price_postapoc": "3 USD"
   },
   {
     "id": "tire_motorbike_or",
@@ -210,17 +217,14 @@
     "type": "ITEM",
     "category": "veh_parts",
     "looks_like": "wheel_wide",
+    "copy-from": "tire_rubber",
     "name": { "str": "24\" wide tire" },
     "description": "A wide tire for fitting to a wide steel rim.",
     "weight": "15000 g",
     "volume": "17500 ml",
     "longest_side": "610 mm",
     "price": "270 USD",
-    "price_postapoc": "5 USD 50 cent",
-    "material": [ "rubber" ],
-    "flags": [ "NONCONDUCTIVE" ],
-    "symbol": "]",
-    "color": "dark_gray"
+    "price_postapoc": "5 USD 50 cent"
   },
   {
     "id": "tire_wide_or",
@@ -234,17 +238,14 @@
     "type": "ITEM",
     "category": "veh_parts",
     "looks_like": "wheel_bicycle",
+    "copy-from": "tire_rubber",
     "name": { "str": "27\" bicycle tire" },
     "description": "A bicycle tire for fitting to a bicycle rim.",
     "weight": "750 g",
     "volume": "2 L",
     "longest_side": "686 mm",
     "price": "20 USD",
-    "price_postapoc": "1 USD 25 cent",
-    "material": [ "rubber" ],
-    "flags": [ "NONCONDUCTIVE" ],
-    "symbol": "]",
-    "color": "dark_gray"
+    "price_postapoc": "1 USD 25 cent"
   },
   {
     "id": "tire_bicycle_or",
