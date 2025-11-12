@@ -70,5 +70,41 @@
     "item_prefix": "faulty",
     "price_modifier": 0.5,
     "flags": [ "BAD_STARTER" ]
+  },
+  {
+    "id": "fault_tire_puncture",
+    "type": "fault",
+    "name": { "str": "Flat tire" },
+    "description": "A punctured tire cannot hold air pressure and needs a patch.",
+    "item_prefix": "faulty",
+    "price_modifier": 0.1,
+    "flags": [ "DEFLATED_TIRE" ]
+  },
+  {
+    "id": "fault_tire_bulge",
+    "type": "fault",
+    "name": { "str": "Bulging Tire" },
+    "description": "Broken cords in a tire make it more likely to burst.",
+    "item_prefix": "faulty",
+    "price_modifier": 0.5,
+    "flags": [ "WEAKENED_TIRE" ]
+  },
+  {
+    "id": "fault_tire_valve_stem",
+    "type": "fault",
+    "name": { "str": "Flat tire" },
+    "description": "Broken valve stems deflate a tire and must be replaced.",
+    "item_prefix": "faulty",
+    "price_modifier": 0.1,
+    "flags": [ "DEFLATED_TIRE" ]
+  },
+  {
+    "id": "fault_tire_low_air",
+    "type": "fault",
+    "name": { "str": "Flat tire" },
+    "description": "Through neglect this tire no longer has any pressure in it",
+    "item_prefix": "faulty",
+    "price_modifier": 0.5,
+    "flags": [ "DEFLATED_TIRE" ]
   }
 ]

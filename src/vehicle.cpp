@@ -597,15 +597,15 @@ void vehicle::init_state( map &placed_on, int init_veh_fuel, int init_veh_status
             }
         }
     }
-    // destroy tires until the vehicle is not drivable
-    if( destroyTires && !wheelcache.empty() ) {
-        int tries = 0;
-        while( valid_wheel_config( placed_on ) && tries < 100 ) {
-            // wheel config is still valid, destroy the tire.
-            set_hp( parts[random_entry( wheelcache )], 0, false );
-            tries++;
-        }
+    if( vp.has_feature( VPFLAG_WHEEL ) ) {
+    // If possible set a tire fault rather than destroying the tire outright
+    if( destroyTire && pt.faults_potential().empty() ) {
+        set_hp( pt, 0, false );
+    } else if( destroyTire ) {
+        // apply exactly one random potential fault
+        pt.fault_set( random_entry( pt.faults_potential() ) );
     }
+}
 
     // Additional 50% chance for heavy damage to disabled vehicles
     if( veh_status == 1 && one_in( 2 ) ) {

@@ -93,5 +93,35 @@
     "faults_removed": [ "fault_engine_starter" ],
     "skills": { "mechanics": 3 },
     "requirements": [ { "qualities": [ { "id": "WRENCH_FINE", "level": 1 } ], "components": [ [ [ "motor_tiny", 1 ] ] ] } ]
+  },
+  {
+    "type": "fault_fix",
+    "id": "mend_fault_tire_puncture",
+    "name": "Patch a punctured tire.",
+    "success_msg": "You patch the puncture in the %s.",
+    "time": "40 m",
+    "faults_removed": [ "fault_tire_puncture" ],
+    "skills": { "mechanics": 1 },
+    "requirements": [ { "qualities": [ { "id": "WHEEL_FAST", "level": 1 }, { "id": "WRENCH", "level": 1 }, { "id": "REAM", "level": 1 }, { "id": "PRESSURIZATION", "level": 1 }, { "id": "JACK", "level": 1 } ], "components": [ [ [ "soapy_water", 1 ] ], [ [ "patch_kit", 1 ] ] ] } ]
+  },
+  {
+    "type": "fault_fix",
+    "id": "mend_fault_tire_valve_stem",
+    "name": "Replace a damaged valve stem.",
+    "success_msg": "You replace the valve stem in the %s.",
+    "time": "20 m",
+    "faults_removed": [ "fault_tire_valve_stem" ],
+    "skills": { "mechanics": 1 },
+    "requirements": [ { "qualities": [ { "id": "WHEEL_FAST", "level": 1 }, { "id": "WRENCH", "level": 1 }, { "id": "REAM", "level": 1 }, { "id": "PRESSURIZATION", "level": 1 }, { "id": "JACK", "level": 1 } ], "components": [ [ [ "soapy_water", 1 ] ], [ [ "valve_stem", 1 ] ] ] } ]
+  },
+  {
+    "type": "fault_fix",
+    "id": "mend_fault_tire_low_air",
+    "name": "Add air to tire with low pressure.",
+    "success_msg": "You replace the valve stem in the %s.",
+    "time": "3 m",
+    "faults_removed": [ "fault_tire_low_air" ],
+    "skills": { "mechanics": 1 },
+    "requirements": [ { "qualities": [  { "id": "PRESSURIZATION", "level": 1 } ] } ]
   }
 ]
