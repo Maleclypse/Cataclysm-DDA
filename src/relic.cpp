@@ -72,6 +72,7 @@ std::string enum_to_string<relic_recharge_type>( relic_recharge_type type )
         case relic_recharge_type::FOREST: return "forest";
         case relic_recharge_type::UNDERGROUND: return "underground";
         case relic_recharge_type::PORTAL_STORM: return "portal_storm";
+        case relic_recharge_type::CITY: return "city";
         case relic_recharge_type::NUM: break;
     }
     // *INDENT-ON*
