@@ -557,11 +557,11 @@ static bool can_recharge_forest( const tripoint_bub_ms &pos )
 
 // checks if the relic is in the appropriate location to be able to recharge from the weather.
 // does not check the weather type, that job is relegated to the switch in relic::try_recharge()
-static bool can_recharge_portal_storm( const item &it, Character *carrier,
-                                       const tripoint_bub_ms &pos )
+static bool can_recharge_portal_storm( const item &it, Character *carrier )
 {
-    return carrier == nullptr ||
-           carrier->is_worn( it ) || carrier->is_wielding( it );
+    return get_weather().weather_id == weather_type_id( "portal_storm" ) &&
+           ( carrier == nullptr ||
+             carrier->is_worn( it ) || carrier->is_wielding( it ) );
 }
 
 void relic::try_recharge( item &parent, Character *carrier, const tripoint_bub_ms &pos )
