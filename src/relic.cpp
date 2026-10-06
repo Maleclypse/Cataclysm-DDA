@@ -555,8 +555,6 @@ static bool can_recharge_forest( const tripoint_bub_ms &pos )
            !overmap_buffer.is_in_city( omt_were_at );
 }
 
-// checks if the relic is in the appropriate location to be able to recharge from the weather.
-// does not check the weather type, that job is relegated to the switch in relic::try_recharge()
 void relic::try_recharge( item &parent, Character *carrier, const tripoint_bub_ms &pos )
 {
     if( charge.regenerate_ammo && item_can_not_load_ammo( parent ) ) {
