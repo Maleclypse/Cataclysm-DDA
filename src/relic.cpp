@@ -27,6 +27,8 @@
 #include "weather.h"
 #include "weather_type.h"
 
+static const weather_type_id relic_weather_portal_storm( "portal_storm" );
+
 /*
  * A little helper function to tell if you can load one ammo into a gun.
  * Checks if you can load ammo directly into the gun, or if you can load it into a magazine in the gun.
@@ -635,7 +637,7 @@ void relic::try_recharge( item &parent, Character *carrier, const tripoint_bub_m
             return;
         }
         case relic_recharge_type::PORTAL_STORM: {
-            if( get_weather().weather_id == weather_type_id( "portal_storm" ) ) {
+            if( get_weather().weather_id == relic_weather_portal_storm ) {
                 charge.accumulate_charge( parent );
             }
             return;
