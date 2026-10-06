@@ -557,6 +557,15 @@ static bool can_recharge_forest( const tripoint_bub_ms &pos )
            !overmap_buffer.is_in_city( omt_were_at );
 }
 
+// Checks if the relic is in a city.
+static bool can_recharge_city( const tripoint_bub_ms &pos )
+{
+    const tripoint_abs_omt omt_were_at =
+        project_to<coords::omt>( get_map().get_abs( pos ) );
+
+    return overmap_buffer.is_in_city( omt_were_at );
+}
+
 void relic::try_recharge( item &parent, Character *carrier, const tripoint_bub_ms &pos )
 {
     if( charge.regenerate_ammo && item_can_not_load_ammo( parent ) ) {
@@ -615,6 +624,12 @@ void relic::try_recharge( item &parent, Character *carrier, const tripoint_bub_m
         }
         case relic_recharge_type::FOREST: {
             if( can_recharge_forest( pos ) ) {
+                charge.accumulate_charge( parent );
+            }
+            return;
+        }
+        case relic_recharge_type::CITY: {
+            if( can_recharge_city( pos ) ) {
                 charge.accumulate_charge( parent );
             }
             return;
