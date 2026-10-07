@@ -157,6 +157,7 @@ enum class relic_recharge_type : int {
     FOREST,
     UNDERGROUND,
     PORTAL_STORM,
+    "CITY",
     NUM
 };
 
