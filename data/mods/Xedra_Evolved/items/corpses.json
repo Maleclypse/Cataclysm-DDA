@@ -62,7 +62,7 @@
     "price": "10 USD",
     "price_postapoc": "10 cent",
     "material": [ "aluminum", "plastic" ],
-    "weight": "1500 g",
+    "weight": "1 kg",
     "volume": "750 ml",
     "to_hit": { "grip": "none", "length": "short", "surface": "line", "balance": "uneven" },
     "flags": [ "TRADER_AVOID", "NO_REPAIR" ],
