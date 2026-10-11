@@ -353,7 +353,7 @@
     "id": "jmath_telepathy_knacks_combined_level",
     "num_args": 0,
     "return": "0"
-  }
+  },
   {
     "type": "jmath_function",
     "id": "werewolf_tier_one_traits",
