@@ -3969,6 +3969,9 @@ class Character : public Creature, public visitable
         /** Checks if a Character is driving */
         bool is_driving() const;
 
+        /** Checks if a Character is in a city */
+        bool is_on_city_omt() const;
+
         /** Drenches the player with water, saturation is the percent gotten wet */
         void drench( int saturation, const body_part_set &flags, bool ignore_waterproof );
         /** Recalculates morale penalty/bonus from wetness based on mutations, equipment and temperature */

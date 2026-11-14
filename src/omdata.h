@@ -284,6 +284,7 @@ enum class oter_flags : int {
     water,
     river_tile,
     has_sidewalk,
+    man_made,
     road,
     highway,
     highway_reserved,

@@ -607,7 +607,7 @@ class overmap
         void place_special_forced( const overmap_special_id &special_id, const tripoint_om_omt &p,
                                    om_direction::type dir );
         // Whether the tripoint's point is true in city_tiles
-        bool is_in_city( const tripoint_om_omt &p ) const;
+        bool is_in_city( const tripoint_om_omt &p, bool require_man_made = false ) const;
         // Returns the distance to the nearest city_tile within max_dist_to_check or std::nullopt if there isn't one
         std::optional<int> distance_to_city( const tripoint_om_omt &p,
                                              int max_dist_to_check = OMAPX ) const;

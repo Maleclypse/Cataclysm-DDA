@@ -465,8 +465,12 @@ void overmap::clear_cities()
 }
 
 
-bool overmap::is_in_city( const tripoint_om_omt &p ) const
+bool overmap::is_in_city( const tripoint_om_omt &p, bool require_man_made ) const
 {
+    if( require_man_made && !ter( p )->has_flag( oter_flags::man_made ) ) {
+        return false;
+    }
+
     if( !city_tiles.empty() ) {
         return city_tiles.find( p.xy() ) != city_tiles.end();
     } else {

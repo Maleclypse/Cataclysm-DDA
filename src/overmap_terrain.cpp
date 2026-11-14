@@ -385,6 +385,7 @@ std::string enum_to_string<oter_flags>( oter_flags data )
         case oter_flags::highway_reserved: return "HIGHWAY_RESERVED";
         case oter_flags::highway_special: return "HIGHWAY_SPECIAL";
         case oter_flags::no_rotate: return "NO_ROTATE";
+        case oter_flags::man_made: return "MAN_MADE";
         case oter_flags::should_not_spawn: return "SHOULD_NOT_SPAWN";
         case oter_flags::ignore_rotation_for_adjacency: return "IGNORE_ROTATION_FOR_ADJACENCY";
         case oter_flags::line_drawing: return "LINEAR";

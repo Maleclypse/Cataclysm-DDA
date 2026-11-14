@@ -7637,6 +7637,14 @@ bool Character::empathizes_with_monster( const mtype_id &monster ) const
     return false;
 }
 
+bool Character::is_on_city_omt() const
+{
+    const tripoint_abs_omt omt_pos = pos_abs_omt();
+
+    return overmap_buffer.is_in_city( omt_pos ) &&
+           overmap_buffer.ter( omt_pos )->has_flag( oter_flags::man_made );
+}
+
 bool Character::is_driving() const
 {
     map &here = get_map();
